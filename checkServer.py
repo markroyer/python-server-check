@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# Author - Mark Royer
+
 import os
 import time
 import smtplib
@@ -8,7 +10,7 @@ from email.mime.text import MIMEText
 
 hostname = "example.com"
 sender = "mark.e.royer@gmail.com"
-# Additional receivers can be added, but they must be a comma separated 
+# Additional receivers can be added, but they must be comma separated 
 receivers = sender + ",someone_else@gmail.com"
 
 def ping():
