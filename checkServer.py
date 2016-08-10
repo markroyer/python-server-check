@@ -17,6 +17,8 @@ def ping():
     print "Attempting to ping host %s..." % hostname
     # Send one packet and wait up to 10 seconds for a response
     return os.system("ping -c 1 -W 10 " + hostname  + " > /dev/null")
+    # Alternatively, check web port 80 if icmp is blocked
+    #return os.system("wget -nv -O - " + hostname  + " > /dev/null 2>&1")
 
 def main():
     response = ping()
@@ -41,7 +43,7 @@ def main():
         print "Failed to ping %s.  Sent email to %s." % (hostname, receivers)
 
     else:
-        print "Succesful ping response from %s.  It's alive!" % hostname
+        print "Successful ping response from %s.  It's alive!" % hostname
 
 if __name__ == "__main__":
     main()
