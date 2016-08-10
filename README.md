@@ -19,7 +19,7 @@ just run using the Python interpreter.
 
 The script can be executed in the following manner.
 
-```bash
+```
 usage: checkServer.py [-h] [-a ATTEMPTS] [-w WAIT] [-g]
                       host sender recipients [recipients ...]
 
