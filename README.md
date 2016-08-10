@@ -22,9 +22,6 @@ The script can be executed in the following manner.
 ```
 usage: checkServer.py [-h] [-a ATTEMPTS] [-w WAIT] [-g]
                       host sender [recipients [recipients ...]]
-checkServer.py: error: too few arguments
-usage: checkServer.py [-h] [-a ATTEMPTS] [-w WAIT] [-g]
-                      host sender [recipients [recipients ...]]
 
 positional arguments:
   host                  host name to verify
