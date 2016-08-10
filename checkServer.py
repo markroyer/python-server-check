@@ -24,7 +24,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('host', help='host name to verify')
     parser.add_argument('sender', help='email sender')
-    parser.add_argument('recipients', nargs='+', help='email recipients')
+    parser.add_argument('recipients', nargs='*', help='email recipients (default: sender)')
     parser.add_argument('-a', '--attempts', type=int, default=10, help='max attempts')
     parser.add_argument('-w', '--wait', type=int, default=20, help='wait time in seconds (default: 20)')
     parser.add_argument('-g', '--wget', action="store_true", help='use wget instead of icmp ping')
@@ -34,7 +34,11 @@ def main():
 
         hostname = args.host
         sender = args.sender
-        receivers = ','.join(args.recipients)
+        recSet = set(args.recipients)
+        # Only add sender as recipient if no sender specified
+        if len(recSet) == 0:
+            recSet.add(args.sender)
+        receivers = ','.join(recSet)
         maxAttempts = args.attempts
         waitTime = args.wait # seconds
         useWget = args.wget
