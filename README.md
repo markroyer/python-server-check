@@ -21,12 +21,15 @@ The script can be executed in the following manner.
 
 ```
 usage: checkServer.py [-h] [-a ATTEMPTS] [-w WAIT] [-g]
-                      host sender recipients [recipients ...]
+                      host sender [recipients [recipients ...]]
+checkServer.py: error: too few arguments
+usage: checkServer.py [-h] [-a ATTEMPTS] [-w WAIT] [-g]
+                      host sender [recipients [recipients ...]]
 
 positional arguments:
   host                  host name to verify
   sender                email sender
-  recipients            email recipients
+  recipients            email recipients (default: sender)
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -44,6 +47,9 @@ As an example, invoking the script as
 
 checks to see if `foo.com` reachable by ping.  If `foo.com` is not
 reachable, an email is sent from `a@email.com` to `b@email.com`.
+
+If no email recipients are specified, an email is sent to the sender
+email address.
 
 Using the `--wget` option allows you to specify an alternative port if
 icmp traffic is blocked or ignored.  Specify the port by appending it
