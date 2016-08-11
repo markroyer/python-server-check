@@ -1,7 +1,7 @@
 # python-server-check
 
 A simple Python script to see if a server is still alive. If the
-server does not respond after 10 ping attempts, the script will email
+server does not respond after a specified number of attempts (default: 10), the script will email
 recipients indicated in the script.
 
 ## Requirements
