@@ -6,8 +6,12 @@ recipients indicated in the script.
 
 ## Requirements
 
-The program requires Python and some email daemon to be installed (eg,
-sendmail).
+The `python-server-check` program requires Python and *some* email daemon is installed.  On Debian-based systems, [Exim4](https://wiki.debian.org/Exim) is a reasonable choice.  It can be installed and configured using the following commands.
+
+```
+sudo apt-get install exim4
+sudo dpkg-reconfigure exim4-config
+```
 
 ## Building
 
